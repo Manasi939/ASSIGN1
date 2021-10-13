@@ -1,0 +1,97 @@
+#include <stdio.h>
+#include<string.h>
+void calculator()
+{
+  char choice;
+  int n1,n2;
+
+do{
+printf("\nEnter your choice among 1) + 2) - 3) * 4)/: ");
+   scanf(" %c",&choice);
+
+
+ if(choice!='0'){printf("\nEnter numbers: ");
+ scanf("%d %d",&n1,&n2);
+ }
+ switch(choice)
+ {
+   case '+':
+    
+  printf("\n%d",n1+n2);
+    break;
+    case '-':
+    printf("\n%d",n1-n2);
+    break;
+    case '*':
+    printf("\n%d",n1*n2);
+    break;
+    case '/':
+    printf("\n%d",n1/n2);
+    break;
+    case '0':
+      break;
+
+    default:
+    printf("Enter a valid number ");
+    break;
+ }
+}
+while(choice!='0');
+ 
+}
+void prime(int n1,int n2)
+{int i,k;
+for(i=n1+1;i<n2;i++)
+{
+  for(k=2;k<i;k++)
+  {
+      if(i%k==0){break;}
+  }
+  if(k==i){printf(" %d ",i);}
+
+}
+}
+
+
+void funct()
+{
+  char arr[40];
+   scanf(" %[^\n]s ",arr);
+    int length=strlen(arr);
+    for(int i=0;i<length;i++)
+    {
+        if(arr[i]<='Z' && arr[i]>='A')
+        {
+            printf("%c",arr[i]+32);
+            
+        }
+        else if(arr[i]>='a')
+        {
+            printf("%c",arr[i]-32);
+            
+        }
+        else printf("%c",arr[i]);
+        
+    } 
+}
+
+int main(){
+    
+printf("\n********SIMPLE CALCULATOR************");
+ calculator();
+
+printf("\n**********Prime numbers***************");
+int n1,n2;
+printf("\nEnter range: ");
+scanf("%d %d",&n1,&n2);
+prime(n1,n2);
+       
+printf("\n******Program 4: Enter a string:*******\n ");
+funct();
+
+  
+  
+}
+
+
+
